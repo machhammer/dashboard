@@ -1,0 +1,22 @@
+table {
+    width: 100%;
+  } 
+
+.mat-header-cell, .mat-header-row, .mat-header-cell-def{
+    background:#f2f4f7;
+    height:15px;
+    font-weight:bold;
+    font-size:10px;
+    position: sticky;
+    padding: 2px 2px 2px 0;
+    z-index: 1;
+}
+
+.mat-row {
+    height:8px;
+    font-size:10px;
+}
+.mat-cell {
+    font-size:11px;   
+    padding: 2px 2px 2px 0;
+}

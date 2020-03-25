@@ -1,0 +1,49 @@
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+    <mat-card fxFlex="25" class="stats-cards">
+        <app-widget-card [data]="winner"></app-widget-card>
+    </mat-card>
+    <mat-card fxFlex="25" class="stats-cards">
+        <app-widget-card [data]="looser"></app-widget-card>
+    </mat-card>
+    <mat-card fxFlex="25" class="stats-cards">
+        <app-widget-card></app-widget-card>
+    </mat-card>
+    <mat-card fxFlex="25" class="stats-cards">
+        <app-widget-card></app-widget-card>
+    </mat-card>
+</div>
+
+<br>
+
+<mat-divider></mat-divider>
+
+<br>    
+
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
+    <mat-card fxFlex="50">
+        <app-widget-area></app-widget-area>
+    </mat-card>
+    <mat-card fxFlex="50">
+        <app-widget-area></app-widget-area>
+    </mat-card>
+</div>
+
+
+
+
+
+<br>
+
+<mat-divider></mat-divider>
+
+
+<br>
+
+<div>
+    <div>Table</div>
+    <div>Pie chart</div>
+</div>
+
+<div>
+    <app-widget-news></app-widget-news>
+</div>
