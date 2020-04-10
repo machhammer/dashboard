@@ -1,15 +1,13 @@
+<app-searchbar></app-searchbar>
+
 <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
-    <mat-card fxFlex="25" class="stats-cards">
-        <app-widget-card [data]="winner"></app-widget-card>
+    <mat-card fxFlex="50" class="stats-cards">
+        <mat-card-subtitle>Performance daily</mat-card-subtitle>
+        <app-widget-card [data]="performance_1_day" ></app-widget-card>
     </mat-card>
-    <mat-card fxFlex="25" class="stats-cards">
-        <app-widget-card [data]="looser"></app-widget-card>
-    </mat-card>
-    <mat-card fxFlex="25" class="stats-cards">
-        <app-widget-card></app-widget-card>
-    </mat-card>
-    <mat-card fxFlex="25" class="stats-cards">
-        <app-widget-card></app-widget-card>
+    <mat-card fxFlex="50" class="stats-cards">
+        <mat-card-subtitle>Performance 20 days</mat-card-subtitle>
+        <app-widget-card [data]="performance_n_days" ></app-widget-card>
     </mat-card>
 </div>
 
@@ -20,17 +18,22 @@
 <br>    
 
 <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
-    <mat-card fxFlex="50">
-        <app-widget-area></app-widget-area>
-    </mat-card>
-    <mat-card fxFlex="50">
-        <app-widget-area></app-widget-area>
+    <mat-card fxFlex="100">
+        <app-widget-performance-graph></app-widget-performance-graph>
     </mat-card>
 </div>
 
+<br>
 
+<mat-divider></mat-divider>
 
+<br>
 
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
+    <mat-card fxFlex="100">
+        <app-world-performance-map></app-world-performance-map>
+    </mat-card>
+</div>
 
 <br>
 

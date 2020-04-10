@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DashboardService } from '../dashboard.service';
 import { Equity } from '../../models/objects';
 
 
@@ -11,23 +10,16 @@ import { Equity } from '../../models/objects';
 })
 export class DashboardComponent implements OnInit {
 
-  looser = []
+  performance_1_day = "performance_1_day"
+  performance_n_days = "performance_n_days"
+  
 
-  winner: Equity[];
+  selectedSymbols = []
 
-  constructor(private dashboardService: DashboardService) { }
-
-
+  constructor() { }
 
   ngOnInit(): void {
-    console.log("load winners")
-    this.dashboardService.winner().subscribe((data: Equity[])=> {
-      this.winner = data
-      console.log(this.winner)
-    })
-    
-    //this.winner = this.dashboardService.winner();
-    //this.looser = this.dashboardService.looser();
+
   }
 
 }

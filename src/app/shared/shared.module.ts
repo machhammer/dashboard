@@ -11,12 +11,20 @@ import { MatMenuModule } from '@angular/material/menu/';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
-
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { AreaComponent } from './widgets/area/area.component';
+import { PerformanceGraphComponent } from './widgets/performance-graph/performance-graph.component';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { NewsComponent } from './widgets/news/news.component';
-import { CardComponent } from './widgets/card/card.component'
+import { CardComponent } from './widgets/card/card.component';
+import { PerformanceTableComponent } from './widgets/performance-table/performance-table.component';
+import { IndexTableComponent } from './widgets/index-table/index-table.component';
+import { WorldPerformanceMapComponent } from './widgets/world-performance-map/world-performance-map.component';
+import { SearchbarComponent } from './components/searchbar/searchbar.component'
 
 
 @NgModule({
@@ -24,9 +32,14 @@ import { CardComponent } from './widgets/card/card.component'
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    AreaComponent,
+    PerformanceGraphComponent,
+    PerformanceTableComponent,
     NewsComponent,
-    CardComponent
+    CardComponent,
+    PerformanceTableComponent,
+    IndexTableComponent,
+    WorldPerformanceMapComponent,
+    SearchbarComponent
   ],
   imports: [
     CommonModule,
@@ -37,17 +50,26 @@ import { CardComponent } from './widgets/card/card.component'
     MatMenuModule,
     MatListModule,
     MatTableModule,
+    MatCheckboxModule,
+    MatSelectModule,
     RouterModule,
     FlexLayoutModule,
-    HighchartsChartModule
+    HighchartsChartModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    AreaComponent,
+    PerformanceGraphComponent,
+    PerformanceTableComponent,
     NewsComponent,
-    CardComponent
+    IndexTableComponent,
+    CardComponent,
+    WorldPerformanceMapComponent,
+    SearchbarComponent
   ]
 })
 export class SharedModule { }

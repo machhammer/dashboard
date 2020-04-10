@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, RouteReuseStrategy } from '@angular/router';
 import { DefaultComponent } from './layouts/default/default.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
-import { PostsComponent } from './modules/posts/posts.component';
-
+import { CatalogComponent } from './modules/catalog/catalog.component';
+import { CacheRouteReuseStrategy } from './cache-route-reuse.strategy';
 
 const routes: Routes = [{
   path: '',
@@ -13,7 +13,7 @@ const routes: Routes = [{
     component: DashboardComponent
   },{
     path: 'posts',
-    component: PostsComponent
+    component: CatalogComponent
 
   }]
 
@@ -21,6 +21,10 @@ const routes: Routes = [{
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule], 
+  providers: [{
+              provide: RouteReuseStrategy,
+              useClass: CacheRouteReuseStrategy
+            }]
 })
 export class AppRoutingModule { }

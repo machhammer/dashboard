@@ -2,9 +2,20 @@
 export interface Equity {
     company: string;
     country: string;
-    index: string;
-    current_price: number;
     performance: number;
     sector: string;
-    symbol: string;
+    current_price: number;
+    index: string;
 }  
+
+export interface Index {
+    country: string;
+    index: string;
+}
+
+
+export interface Country {
+    code: string;
+    country: string;
+    performance: number;
+}

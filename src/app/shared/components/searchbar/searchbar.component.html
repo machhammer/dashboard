@@ -1,0 +1,29 @@
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+    <mat-form-field>
+        <mat-select >
+            <mat-option *ngFor="let country of countries" [value]="country">
+                {{country}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-select >
+            <mat-option *ngFor="let sector of sectors" [value]="sector">
+                {{sector}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput [(ngModel)]="searchValue"
+            type="text" name="searchField" placeholder = "Index" 
+            (keyup.enter)="onSearch($event)"
+        >
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput [(ngModel)]="searchValue"
+            type="text" name="searchField" placeholder = "Symbol" 
+            (keyup.enter)="onSearch($event)"
+        >
+    </mat-form-field>
+    <mat-icon>search</mat-icon>
+</div>

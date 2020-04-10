@@ -3,15 +3,17 @@ import { CommonModule } from '@angular/common';
 import { DefaultComponent } from './default.component';
 import { DashboardComponent } from 'src/app/modules/dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
-import { PostsComponent } from 'src/app/modules/posts/posts.component';
+import { CatalogComponent } from 'src/app/modules/catalog/catalog.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
-import { MatTableDataSource } from '@angular/material/table/';
+import { MatTableModule } from '@angular/material/table/';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DashboardService } from 'src/app/modules/dashboard.service';
+
 import { BrowserModule }    from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -20,7 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     DefaultComponent,
     DashboardComponent,
-    PostsComponent
+    CatalogComponent
   ],
   imports: [
     CommonModule,
@@ -32,10 +34,12 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     BrowserModule,
     HttpClientModule,
-    MatTableDataSource
+    MatTableModule,
+    MatCheckboxModule
   ],
-  providers: [
-    DashboardService
+  providers: [ 
+    DashboardService,
+    
   ]
 })
 export class DefaultModule { }

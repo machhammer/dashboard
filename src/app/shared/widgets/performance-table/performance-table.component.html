@@ -1,0 +1,47 @@
+<div class="table-container">
+    <table mat-table [dataSource]="equities_datasource" class="mat-elevation-z2">
+  
+        
+        <!-- Position Column -->
+        <ng-container matColumnDef="company">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let equity"> {{equity.company}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="country">
+          <th mat-header-cell *matHeaderCellDef> Country </th>
+          <td mat-cell *matCellDef="let equity"> {{equity.country}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="sector">
+          <th mat-header-cell *matHeaderCellDef> Sector </th>
+          <td mat-cell class="left" *matCellDef="let equity"> {{equity.sector}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="index">
+            <th mat-header-cell *matHeaderCellDef> Index </th>
+            <td mat-cell class="left" *matCellDef="let equity"> {{equity.index}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="current_price">
+            <th mat-header-cell *matHeaderCellDef> Price </th>
+            <td mat-cell *matCellDef="let equity" class="right">{{ equity.current_price | number:'1.2-2' }}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="performance">
+          <th mat-header-cell *matHeaderCellDef> Perf. </th>
+          <td mat-cell *matCellDef="let equity" 
+              class="right"
+              [ngClass]="{'positive': equity.performance >= 0, 'negative': equity.performance < 0 }">
+              {{ equity.performance | number:'1.2-2' }}</td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
