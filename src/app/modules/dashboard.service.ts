@@ -10,7 +10,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable()
 export class DashboardService {
 
-  serverUrl = 'http://192.168.1.104:8000'
+  serverUrl = 'http://localhost:8000'
   
   private symbolSource = new BehaviorSubject(['AAPL']);
   currentSymbols = this.symbolSource.asObservable();
